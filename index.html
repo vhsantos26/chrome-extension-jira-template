@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issue Description</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+      body {
+        min-width:400px;
+        font-family: sans-serif;
+      }
+      
+      .button {
+        display: inline-block;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        text-align: center;
+        font-size: 16px
+      }
+      
+      .button-link {
+        background-color: #008CBA;
+      }
+      
+      p {
+        word-wrap: break-word;
+      }
+    </style>
+      
+    <script>
+      function showForm(id) {
+        var element = document.getElementById(id)[0];
+        
+        if (element.hasAttribute("hidden")) {
+          element.removeAttribute = "hidden";
+        } else {
+          element.createAttribute = "hidden";
+        }
+      }
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <h3>Choose a issue type</h3>
+    </header>
+    
+    <div>
+      <div>
+        <a href="#bug" class="button button-link" onclick="showForm('bug')">
+          Bug
+        </a>
+        <a href="#feature" class="button button-link" onclick="showForm('feature')">
+          Feature
+        </a>
+      </div>
+
+      <div >
+        <form id="bug" hidden>
+          <h3>Bug</h3>
+
+          <p>
+            h2.Sumário <br /> O preço mencionado na tela de preços está incorreto
+          </p>
+
+          <p>
+            h2.Passo-a-passo para reprodução <br /> 1. Vá até a página de preços <br /> 2. Consulte
+          </p>
+
+          <p>
+            h2.Resultado esperado <br /> O preço para o plano básico deveria ser USD 29,00
+          </p>
+
+          <p>
+            h2.Resultado obtido <br /> O preço para o plano é USD 25,00
+          </p>
+          
+          <p>
+            h2.Observações <br /> Erro ocorre apenas em ambiente linux, não apresentou problemas com Oracle
+          </p>
+
+          <div >
+            <button type="button" class="button">
+              Use this!
+            </button>
+          </div>
+        </form>
+
+        <form id="feature" hidden>
+          <h3>Feature</h3>
+
+          <p>
+            h2.Sumário <br /> O cliente tem a necessidade de finalizar compras imediatamente, pois...... (Texto RFD)
+          </p>
+
+          <p>
+            *Como* um comprador <br /> *Eu gostaria* de ter a possibilidade de pagar com o cartão de crédito <br /> *Para que* eu possa finalizar minha compra imediatamente
+          </p>
+
+          <p>
+            h2.Critérios de aceitação <br /> * Aceitar Visa, Mastercard, Discover <br /> * Validar número do cartão de crédito quando entrar <br /> * Validar código de verificação <br /> * Validar data de validade do cartão <br /> * Validar endereço de cobrança <br /> * Gerar mensagens de sucesso e falha de acordo com o processamento
+          </p>
+
+          <p>
+            h2.O que é necessário fazer <br /> * Alterar as tabelas … <br /> * Adequar as telas de dados de....
+          </p>
+
+          <div >
+            <button type="button" class="button">
+              Use this!
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
