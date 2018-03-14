@@ -1,5 +1,5 @@
 var issueType;
-var description = document.getElementById("description");
+var description;
 
 const bug = '\
 h2.Sumário \n\
@@ -18,15 +18,25 @@ O preço para o plano é USD 25,00\
 h2.Observações\n\
 Erro ocorre apenas em ambiente linux, não apresentou problemas com Oracle';
 
-document.getElementById("create_link").addEventListener("click", function (event) {
-  "use strict";
-  if (document.querySelector('#issuetype-single-select img') === null) {
-    if (document.getElementById("issue-create-issue-type").textContent === "Bug") {
+if (document.location.href.includes("CreateIssue.jspa")) {
+  window.onload = function () {
+    "use strict";
+    issueType = document.getElementById("issue-create-issue-type");
+    description = document.getElementById("description");
+    if (issueType.textContent === "Bug") {
       description.textContent  = bug;
     }
-  } else {
-    if (document.querySelector('#issuetype-single-select img').getAttribute('src').includes('10303')) {
+  };
+} else {
+ document.getElementById("create_link").addEventListener("click", function () {
+  setTimeout(function() {
+    "use strict";
+    issueType = document.querySelector('#issuetype-single-select img');
+    description = document.getElementById("description");
+    
+    if (issueType.getAttribute('src').includes('10303')) {
       description.textContent  = bug;
     }
-  }
-});
+  }, 1500);
+ }); 
+};
