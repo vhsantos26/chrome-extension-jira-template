@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   
-  "name": "Templates de descrições", 
+  "name": "Jira Templates", 
   "description": "Plugin para auxiliar a inclusão de descrição das tarefas.", 
   "version": "1.0", 
   
@@ -12,5 +12,12 @@
   
   "permissions": [
     "activeTab"
+  ], 
+  
+  "content_scripts": [
+    {
+      "matches": ["http://192.168.200.193/*", "https://192.168.200.193/*"],
+      "js": ["scripts/contents/bug.js"]
+    }
   ]
 }
