@@ -18,13 +18,18 @@ O preço para o plano é USD 25,00\
 h2.Observações\n\
 Erro ocorre apenas em ambiente linux, não apresentou problemas com Oracle';
 
+var setDescription = function () {
+  description = document.getElementById("description");
+  description.textContent  = bug;
+};
+
 if (document.location.href.includes("CreateIssue.jspa")) {
   window.onload = function () {
     "use strict";
     issueType = document.getElementById("issue-create-issue-type");
-    description = document.getElementById("description");
+    
     if (issueType.textContent === "Bug") {
-      description.textContent  = bug;
+      setDescription();
     }
   };
 } else {
@@ -32,10 +37,9 @@ if (document.location.href.includes("CreateIssue.jspa")) {
   setTimeout(function() {
     "use strict";
     issueType = document.querySelector('#issuetype-single-select img');
-    description = document.getElementById("description");
     
     if (issueType.getAttribute('src').includes('10303')) {
-      description.textContent  = bug;
+      setDescription();
     }
   }, 1500);
  }); 
