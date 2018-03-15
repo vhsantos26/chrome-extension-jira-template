@@ -1,5 +1,6 @@
 var issueType;
 var description;
+var textButton;
 
 const bug = '\
 h2.Sumário \n\
@@ -18,7 +19,13 @@ O preço para o plano é USD 25,00\
 h2.Observações\n\
 Erro ocorre apenas em ambiente linux, não apresentou problemas com Oracle';
 
+var clickOnTextView = function () {
+  textButton = document.getElementById("aui-uid-1");
+  textButton.click();
+}
+
 var setDescription = function () {
+  clickOnTextView();
   description = document.getElementById("description");
   description.textContent  = bug;
 };
